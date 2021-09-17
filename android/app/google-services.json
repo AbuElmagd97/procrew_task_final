@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "891274760889",
+    "project_id": "procrewfinal",
+    "storage_bucket": "procrewfinal.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:891274760889:android:cff78c0ce2eceb58f48168",
+        "android_client_info": {
+          "package_name": "com.example.procrew_task_fin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "891274760889-bamperju0j6dds0lbsgg4fbs991ej3fm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.procrew_task_fin",
+            "certificate_hash": "9f3f64ce3691c2219bb9413d93ec6e606d234e81"
+          }
+        },
+        {
+          "client_id": "891274760889-i3ufbql84fcb4hpr8h4gk4v6si97nt8c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAlG2hU8QuNUZWcGS7FDhM8TjqF3FRIUJ0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "891274760889-i3ufbql84fcb4hpr8h4gk4v6si97nt8c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
