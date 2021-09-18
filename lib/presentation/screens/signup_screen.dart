@@ -32,6 +32,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
     BlocProvider.of<AuthCubit>(context).signInWithFacebook();
   }
 
+  Future<void> _loginWithTwitter(BuildContext context) async {
+    BlocProvider.of<AuthCubit>(context).signInWithTwitter();
+  }
+
   Widget _buildIntro() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -195,7 +199,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
               ),
             ),
           ),
-          onPressed: () {},
+          onPressed: () {
+            _loginWithTwitter(context);
+          },
         ),
       ],
     );

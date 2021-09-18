@@ -59,6 +59,19 @@ class AuthCubit extends Cubit<AuthState> {
     }
   }
 
+  Future signInWithTwitter() async {
+    try {
+      emit(AuthLoading());
+      await _authRepository.signInWithTwitter();
+      User? currentUser = _authRepository.currentUser();
+      emit(Authenticated(currentUser!));
+    } catch (e) {
+      emit(ErrorOccurred(errorMsg: e.toString()));
+    }
+  }
+
+
+
   Future logout() async {
     try {
       emit(AuthLoading());

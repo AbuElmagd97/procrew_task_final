@@ -186,7 +186,9 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
             ),
           ),
-          onPressed: () {},
+          onPressed: () {
+            _loginWithTwitter(context);
+          },
         ),
       ],
     );
@@ -227,6 +229,11 @@ class _LoginScreenState extends State<LoginScreen> {
   Future<void> _loginWithFacebook(BuildContext context) async {
     BlocProvider.of<AuthCubit>(context).signInWithFacebook();
   }
+
+  Future<void> _loginWithTwitter(BuildContext context) async {
+    BlocProvider.of<AuthCubit>(context).signInWithTwitter();
+  }
+
 
 
   Widget _buildLoginButtonBloc() {
