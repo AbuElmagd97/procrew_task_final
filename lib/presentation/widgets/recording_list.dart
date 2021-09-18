@@ -79,12 +79,6 @@ class _RecordingsListState extends State<RecordingsList> {
           child: Card(
             child: ListTile(
               title: Text(widget.references.elementAt(index).name),
-              trailing: IconButton(
-                icon: selectedIndex == index
-                    ? FaIcon(FontAwesomeIcons.pauseCircle)
-                    : FaIcon(FontAwesomeIcons.playCircle),
-                onPressed: () => _onListTileButtonPressed(index),
-              ),
             ),
           ),
         );
@@ -92,21 +86,6 @@ class _RecordingsListState extends State<RecordingsList> {
     );
   }
 
-  Future<void> _onListTileButtonPressed(int index) async {
-    setState(() {
-      selectedIndex = index;
-    });
-    audioPlayer
-        .play(await widget.references.elementAt(index).getDownloadURL(),
-            isLocal: false)
-        .then((value) => audioPlayer.stop());
-
-    audioPlayer.onPlayerCompletion.listen((duration) {
-      setState(() {
-        selectedIndex = -1;
-      });
-    });
-  }
 
   Future<void> _deleteVoice(String url) async {
     try {
