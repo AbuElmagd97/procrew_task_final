@@ -10,7 +10,6 @@ import 'package:procrew_task_fin/constants/my_colors.dart';
 
 import 'animation_button.dart';
 
-
 class RecodingButtonsWidget extends StatefulWidget {
   final Function onUploadComplete;
 
@@ -108,33 +107,19 @@ class _RecodingButtonsWidgetState extends State<RecodingButtonsWidget> {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         CircleAvatar(
-          radius: 100,
+          radius: 80,
           backgroundColor: MyColors.myBlue,
           child: CircleAvatar(
-            radius: 92,
+            radius: 75,
             backgroundColor: MyColors.myNavyBlue,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                FaIcon(
-                  FontAwesomeIcons.microphone,
-                  size: 32,
+            child: Center(
+              child: Text(
+                elapsedTime,
+                style: TextStyle(
+                  fontSize: 22,
                   color: Colors.white,
                 ),
-                SizedBox(
-                  height: 10,
-                ),
-                Text(
-                  elapsedTime,
-                  style: TextStyle(
-                    fontSize: 22,
-                    color: Colors.white,
-                  ),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-              ],
+              ),
             ),
           ),
         ),
@@ -183,8 +168,8 @@ class _RecodingButtonsWidgetState extends State<RecodingButtonsWidget> {
                   child: AnimationButton(
                     playIcon: _isRecording
                         ? Icon(Icons.pause)
-                        : Icon(
-                            Icons.fiber_manual_record,
+                        : FaIcon(
+                            FontAwesomeIcons.microphone,
                             color: Colors.white,
                           ),
                     onPressed: _onRecordButtonPressed,
