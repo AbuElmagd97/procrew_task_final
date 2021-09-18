@@ -46,7 +46,7 @@ class _RecordingsScreenState extends State<RecordingsScreen> {
         width: 100,
         height: 50,
         style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.all<Color>(MyColors.myBlue),
+          backgroundColor: MaterialStateProperty.all<Color>(Colors.red),
           shape: MaterialStateProperty.all<RoundedRectangleBorder>(
             RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10),
