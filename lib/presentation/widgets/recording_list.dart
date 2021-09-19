@@ -97,16 +97,19 @@ class _RecordingsListState extends State<RecordingsList> {
   }
 
   Future<void> _onListTileButtonPressed(int index) async {
+    bool isPlaying = true;
     setState(() {
       selectedIndex = index;
+      isPlaying = !isPlaying;
     });
-    audioPlayer.play(await widget.references.elementAt(index).getDownloadURL(),
-        isLocal: false);
+    !isPlaying ?audioPlayer.play(await widget.references.elementAt(index).getDownloadURL(),
+        isLocal: false): audioPlayer.pause();
 
 
     audioPlayer.onPlayerCompletion.listen((duration) {
       setState(() {
         selectedIndex = -1;
+        // audioPlayer.pause();
       });
     });
   }

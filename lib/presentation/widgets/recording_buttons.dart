@@ -133,7 +133,11 @@ class _RecodingButtonsWidgetState extends State<RecodingButtonsWidget> {
                         Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 20),
                             child: LinearProgressIndicator()),
-                        Text('Uploading to Firebase'),
+                        Text(
+                          'Uploading ...',
+                          style: TextStyle(
+                              fontSize: 22, fontWeight: FontWeight.bold),
+                        ),
                       ],
                     )
                   : Row(

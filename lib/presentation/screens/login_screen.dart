@@ -176,7 +176,7 @@ class _LoginScreenState extends State<LoginScreen> {
           height: 50,
           child: FaIcon(
             FontAwesomeIcons.twitter,
-            color: Colors.cyan,
+            color: Color(0xFF1DA1F2),
           ),
           style: ButtonStyle(
             backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
