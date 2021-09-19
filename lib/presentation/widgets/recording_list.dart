@@ -97,19 +97,17 @@ class _RecordingsListState extends State<RecordingsList> {
   }
 
   Future<void> _onListTileButtonPressed(int index) async {
-    bool isPlaying = true;
     setState(() {
       selectedIndex = index;
-      isPlaying = !isPlaying;
+
     });
-    !isPlaying ?audioPlayer.play(await widget.references.elementAt(index).getDownloadURL(),
-        isLocal: false): audioPlayer.pause();
+    audioPlayer.play(await widget.references.elementAt(index).getDownloadURL(),
+        isLocal: false);
 
 
     audioPlayer.onPlayerCompletion.listen((duration) {
       setState(() {
         selectedIndex = -1;
-        // audioPlayer.pause();
       });
     });
   }
@@ -117,8 +115,9 @@ class _RecordingsListState extends State<RecordingsList> {
   Future<void> _deleteVoice(String url) async {
     try {
       FirebaseStorage firebaseStorage = FirebaseStorage.instance;
-      String path = 'gs://pro-crew-task.appspot.com/recordings/';
+      String path = 'gs://procrewfinal.appspot.com/recordings/';
       var fileUrl = '$path$url';
+      print('$path$url');
       firebaseStorage.refFromURL(fileUrl).delete();
     } catch (e) {
       print("Error while delete voice :${e.toString()}");
